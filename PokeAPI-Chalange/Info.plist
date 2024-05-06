@@ -33,5 +33,9 @@
 			</dict>
 		</dict>
 	</array>
+	<key>BASE_URL</key>
+	<string>https://pokeapi.co/api/v2/</string>
+	<key>IMG_BASE_URL</key>
+	<string>https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%@.png</string>
 </dict>
 </plist>

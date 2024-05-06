@@ -14,6 +14,18 @@
 		A45A6E172BE791340019C872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45A6E152BE791340019C872 /* Main.storyboard */; };
 		A45A6E192BE791360019C872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A45A6E182BE791360019C872 /* Assets.xcassets */; };
 		A45A6E1C2BE791360019C872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45A6E1A2BE791360019C872 /* LaunchScreen.storyboard */; };
+		A45A6E252BE791E40019C872 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E242BE791E40019C872 /* Alamofire */; };
+		A45A6E272BE791E40019C872 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E262BE791E40019C872 /* AlamofireDynamic */; };
+		A45A6E2A2BE792080019C872 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E292BE792080019C872 /* SkeletonUI */; };
+		A45A6E2D2BE792200019C872 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E2C2BE792200019C872 /* SDWebImage */; };
+		A45A6E2F2BE792200019C872 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E2E2BE792200019C872 /* SDWebImageMapKit */; };
+		A45A6E382BE861E70019C872 /* PokemonListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E322BE861E70019C872 /* PokemonListPresenter.swift */; };
+		A45A6E392BE861E70019C872 /* PokemonListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E332BE861E70019C872 /* PokemonListWorker.swift */; };
+		A45A6E3A2BE861E70019C872 /* PokemonListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E342BE861E70019C872 /* PokemonListRouter.swift */; };
+		A45A6E3B2BE861E70019C872 /* PokemonListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E352BE861E70019C872 /* PokemonListModels.swift */; };
+		A45A6E3C2BE861E70019C872 /* PokemonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E362BE861E70019C872 /* PokemonListViewController.swift */; };
+		A45A6E3D2BE861E70019C872 /* PokemonListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E372BE861E70019C872 /* PokemonListInteractor.swift */; };
+		A45A6E402BE864CE0019C872 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E3F2BE864CE0019C872 /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +38,13 @@
 		A45A6E182BE791360019C872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A45A6E1B2BE791360019C872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A45A6E1D2BE791360019C872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A45A6E322BE861E70019C872 /* PokemonListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListPresenter.swift; sourceTree = "<group>"; };
+		A45A6E332BE861E70019C872 /* PokemonListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListWorker.swift; sourceTree = "<group>"; };
+		A45A6E342BE861E70019C872 /* PokemonListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListRouter.swift; sourceTree = "<group>"; };
+		A45A6E352BE861E70019C872 /* PokemonListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListModels.swift; sourceTree = "<group>"; };
+		A45A6E362BE861E70019C872 /* PokemonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListViewController.swift; sourceTree = "<group>"; };
+		A45A6E372BE861E70019C872 /* PokemonListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListInteractor.swift; sourceTree = "<group>"; };
+		A45A6E3F2BE864CE0019C872 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +52,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45A6E252BE791E40019C872 /* Alamofire in Frameworks */,
+				A45A6E2F2BE792200019C872 /* SDWebImageMapKit in Frameworks */,
+				A45A6E2A2BE792080019C872 /* SkeletonUI in Frameworks */,
+				A45A6E2D2BE792200019C872 /* SDWebImage in Frameworks */,
+				A45A6E272BE791E40019C872 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,13 +85,28 @@
 				A45A6E0D2BE791340019C872 /* AppDelegate.swift */,
 				A45A6E0F2BE791340019C872 /* DocumentBrowserViewController.swift */,
 				A45A6E112BE791340019C872 /* DocumentViewController.swift */,
+				A45A6E3E2BE861F00019C872 /* PokemonList */,
 				A45A6E132BE791340019C872 /* Document.swift */,
+				A45A6E3F2BE864CE0019C872 /* Endpoint.swift */,
 				A45A6E152BE791340019C872 /* Main.storyboard */,
 				A45A6E182BE791360019C872 /* Assets.xcassets */,
 				A45A6E1A2BE791360019C872 /* LaunchScreen.storyboard */,
 				A45A6E1D2BE791360019C872 /* Info.plist */,
 			);
 			path = "PokeAPI-Chalange";
+			sourceTree = "<group>";
+		};
+		A45A6E3E2BE861F00019C872 /* PokemonList */ = {
+			isa = PBXGroup;
+			children = (
+				A45A6E322BE861E70019C872 /* PokemonListPresenter.swift */,
+				A45A6E332BE861E70019C872 /* PokemonListWorker.swift */,
+				A45A6E342BE861E70019C872 /* PokemonListRouter.swift */,
+				A45A6E352BE861E70019C872 /* PokemonListModels.swift */,
+				A45A6E362BE861E70019C872 /* PokemonListViewController.swift */,
+				A45A6E372BE861E70019C872 /* PokemonListInteractor.swift */,
+			);
+			path = PokemonList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +125,13 @@
 			dependencies = (
 			);
 			name = "PokeAPI-Chalange";
+			packageProductDependencies = (
+				A45A6E242BE791E40019C872 /* Alamofire */,
+				A45A6E262BE791E40019C872 /* AlamofireDynamic */,
+				A45A6E292BE792080019C872 /* SkeletonUI */,
+				A45A6E2C2BE792200019C872 /* SDWebImage */,
+				A45A6E2E2BE792200019C872 /* SDWebImageMapKit */,
+			);
 			productName = "PokeAPI-Chalange";
 			productReference = A45A6E0A2BE791340019C872 /* PokeAPI-Chalange.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +160,11 @@
 				Base,
 			);
 			mainGroup = A45A6E012BE791340019C872;
+			packageReferences = (
+				A45A6E232BE791E40019C872 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A45A6E282BE792080019C872 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
+				A45A6E2B2BE792200019C872 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = A45A6E0B2BE791340019C872 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,8 +192,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45A6E3D2BE861E70019C872 /* PokemonListInteractor.swift in Sources */,
+				A45A6E402BE864CE0019C872 /* Endpoint.swift in Sources */,
+				A45A6E3A2BE861E70019C872 /* PokemonListRouter.swift in Sources */,
 				A45A6E142BE791340019C872 /* Document.swift in Sources */,
 				A45A6E122BE791340019C872 /* DocumentViewController.swift in Sources */,
+				A45A6E3B2BE861E70019C872 /* PokemonListModels.swift in Sources */,
+				A45A6E3C2BE861E70019C872 /* PokemonListViewController.swift in Sources */,
+				A45A6E382BE861E70019C872 /* PokemonListPresenter.swift in Sources */,
+				A45A6E392BE861E70019C872 /* PokemonListWorker.swift in Sources */,
 				A45A6E102BE791340019C872 /* DocumentBrowserViewController.swift in Sources */,
 				A45A6E0E2BE791340019C872 /* AppDelegate.swift in Sources */,
 			);
@@ -369,6 +427,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A45A6E232BE791E40019C872 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		A45A6E282BE792080019C872 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+		A45A6E2B2BE792200019C872 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A45A6E242BE791E40019C872 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A45A6E232BE791E40019C872 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A45A6E262BE791E40019C872 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A45A6E232BE791E40019C872 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		A45A6E292BE792080019C872 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A45A6E282BE792080019C872 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
+		};
+		A45A6E2C2BE792200019C872 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A45A6E2B2BE792200019C872 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		A45A6E2E2BE792200019C872 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A45A6E2B2BE792200019C872 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A45A6E022BE791340019C872 /* Project object */;
 }
