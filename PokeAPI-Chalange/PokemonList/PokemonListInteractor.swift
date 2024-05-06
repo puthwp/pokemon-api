@@ -13,11 +13,14 @@ protocol PokemonListBusinessLogic {
     func searchPokemonName(name: String)
 }
 
-protocol PokemonListDataStore {}
+protocol PokemonListDataStore {
+    var selectedPokemon: PokemonList.Presentable? { get set }
+}
 
 class PokemonListInteractor: PokemonListBusinessLogic, PokemonListDataStore {
     var presenter: PokemonListPresentationLogic?
     var worker: PokemonListWorker?
+    var selectedPokemon: PokemonList.Presentable?
     
     func getPokemonList(limit: Int, offset: Int) {
         worker = PokemonListWorker()

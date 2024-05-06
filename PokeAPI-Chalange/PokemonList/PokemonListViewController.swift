@@ -117,14 +117,19 @@ extension PokemonListViewController: UICollectionViewDataSource, UICollectionVie
         8
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        guard kind == UICollectionView.elementKindSectionFooter else {
-//            return UICollectionReusableView()
-//        }
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PokemonSearchBarReuseableView.reuseableId, for: indexPath)
-//        return header
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionFooter else {
+            return UICollectionReusableView()
+        }
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PokemonSearchBarReuseableView.reuseableId, for: indexPath)
+        return header
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let pokemon = pokemons[indexPath.row] as PokemonList.Presentable else {
+            return
+        }
+    }
 }
 
 extension PokemonListViewController: UIScrollViewDelegate {
