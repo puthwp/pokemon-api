@@ -20,6 +20,7 @@ class PokemonListInteractor: PokemonListBusinessLogic, PokemonListDataStore {
     var worker: PokemonListWorker?
     
     func getPokemonList(limit: Int, offset: Int) {
+        worker = PokemonListWorker()
         worker?.fetchList(limit: limit, offset: offset) { [weak self] result in
             switch result {
             case let .success(response):

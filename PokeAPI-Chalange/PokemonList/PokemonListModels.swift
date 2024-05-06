@@ -17,7 +17,7 @@ enum PokemonList {
         let result: [Pokemon]?
         
         enum CodingKeys: String, CodingKey {
-            case count, next, previous, result
+            case count, next, previous, result = "results"
         }
     }
     
@@ -39,7 +39,7 @@ enum PokemonList {
         init(_ input: Pokemon) {
             let pokemonId = Pokemon.pokemonIndex(input)
             self.id = pokemonId
-            self.name = input.name
+            self.name = input.name.capitalized
             self.link = URL(string: input.url)
             self.imgUrl = URL(string: String(format: Endpoint.imgBaseUrl, pokemonId))
         }
