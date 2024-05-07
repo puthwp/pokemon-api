@@ -25,7 +25,7 @@ enum Endpoint {
         case .seach:
             return "pokemon?offset=0&limit=10000"
         case let .detail(name):
-            return "pokemon/" + name
+            return "pokemon/" + name.lowercased()
         }
     }
     var url: URL {
