@@ -8,7 +8,9 @@
 
 import UIKit
 
-@objc protocol PokemonListRoutingLogic {}
+@objc protocol PokemonListRoutingLogic {
+    func routeToDetailView()
+}
 
 protocol PokemonListDataPassing {
     var dataStore: PokemonListDataStore? { get }
@@ -17,4 +19,15 @@ protocol PokemonListDataPassing {
 class PokemonListRouter: NSObject, PokemonListRoutingLogic, PokemonListDataPassing {
     weak var viewController: PokemonListViewController?
     var dataStore: PokemonListDataStore?
+    
+    func routeToDetailView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        if let name = dataStore?.selectedPokemon?.name,
+           let vc = storyboard.instantiateViewController(withIdentifier: PokemonDetailViewController.identifier) as? PokemonDetailViewController {
+            let interactor = PokemonDetailInteractor()
+            interactor.pokemonName = name
+            vc.interactor = interactor
+            self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

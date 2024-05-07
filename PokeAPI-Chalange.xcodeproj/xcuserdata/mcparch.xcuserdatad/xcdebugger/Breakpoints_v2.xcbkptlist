@@ -70,102 +70,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5EB31CBE-86A2-4D74-8DAC-037B763291A3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "displayResult(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5EB31CBE-86A2-4D74-8DAC-037B763291A3 - 2f481a47647fa5b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeAPI_Chalange.PokemonListViewController.displayError() -&gt; ()"
-                  moduleName = "PokeAPI-Chalange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "5EB31CBE-86A2-4D74-8DAC-037B763291A3 - 5e7a3a9a61fd38bb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeAPI_Chalange.PokemonListViewController.displayResult(Swift.Optional&lt;Swift.Array&lt;PokeAPI_Chalange.PokemonList.Presentable&gt;&gt;) -&gt; ()"
-                  moduleName = "PokeAPI-Chalange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "136">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "481129B7-8F82-471E-A870-D27CE0489C25"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "displayResult(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "481129B7-8F82-471E-A870-D27CE0489C25 - 2f481a47647fa5b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeAPI_Chalange.PokemonListViewController.displayError() -&gt; ()"
-                  moduleName = "PokeAPI-Chalange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "481129B7-8F82-471E-A870-D27CE0489C25 - 5e7a3a9a61fd3898"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeAPI_Chalange.PokemonListViewController.displayResult(Swift.Optional&lt;Swift.Array&lt;PokeAPI_Chalange.PokemonList.Presentable&gt;&gt;) -&gt; ()"
-                  moduleName = "PokeAPI-Chalange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F6ED711B-A9A8-4CE8-AE79-E114A74F2B55"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -173,13 +77,13 @@
             filePath = "PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F6ED711B-A9A8-4CE8-AE79-E114A74F2B55 - 9672c89c8ea35969"
+                  uuid = "F6ED711B-A9A8-4CE8-AE79-E114A74F2B55 - 9672c89c8ea3594a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -189,12 +93,12 @@
                   urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "260">
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "1564">
                </Location>
                <Location
-                  uuid = "F6ED711B-A9A8-4CE8-AE79-E114A74F2B55 - 9672c89c8ea35969"
+                  uuid = "F6ED711B-A9A8-4CE8-AE79-E114A74F2B55 - 9672c89c8ea3594a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -204,38 +108,8 @@
                   urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "268">
-               </Location>
-               <Location
-                  uuid = "F6ED711B-A9A8-4CE8-AE79-E114A74F2B55 - 9672c89c8ea35969"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeAPI_Chalange.PokemonListViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
-                  moduleName = "PokeAPI-Chalange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  uuid = "F6ED711B-A9A8-4CE8-AE79-E114A74F2B55 - 9672c89c8ea35969"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokeAPI_Chalange.PokemonListViewController.searchBar(_: __C.UISearchBar, textDidChange: Swift.String) -&gt; ()"
-                  moduleName = "PokeAPI-Chalange"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mcparch/projects/PokeAPI-Chalange/PokeAPI-Chalange/PokemonList/PokemonListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
                   offsetFromSymbolStart = "408">
                </Location>
             </Locations>

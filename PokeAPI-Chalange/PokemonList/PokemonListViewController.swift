@@ -164,6 +164,7 @@ extension PokemonListViewController: UICollectionViewDataSource, UICollectionVie
                 self.interactor?.selectPokemon(pokemon)
             }
         }
+        self.router?.routeToDetailView()
     }
 }
 
