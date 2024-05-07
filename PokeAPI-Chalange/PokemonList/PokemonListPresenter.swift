@@ -10,6 +10,7 @@ import UIKit
 
 protocol PokemonListPresentationLogic {
     func presentList(list: [PokemonList.Pokemon]?)
+    func presentResult(result: [PokemonList.Pokemon]?)
     func presentError()
 }
 
@@ -19,6 +20,11 @@ class PokemonListPresenter: PokemonListPresentationLogic {
     func presentList(list: [PokemonList.Pokemon]?) {
         let presentable = list?.makeIterator().map { PokemonList.Presentable($0) }
         viewController?.displayList(presentable)
+    }
+    
+    func presentResult(result: [PokemonList.Pokemon]?) {
+        let presentable = result?.makeIterator().map { PokemonList.Presentable($0) }
+        viewController?.displayResult(presentable)
     }
     
     func presentError() {

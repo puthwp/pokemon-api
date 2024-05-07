@@ -11,6 +11,7 @@ import UIKit
 protocol PokemonListBusinessLogic {
     func getPokemonList(limit: Int, offset: Int)
     func searchPokemonName(name: String)
+    func selectPokemon(_ item: PokemonList.Presentable)
 }
 
 protocol PokemonListDataStore {
@@ -38,15 +39,19 @@ class PokemonListInteractor: PokemonListBusinessLogic, PokemonListDataStore {
         worker?.fetchAllPokemon { [weak self] result in
             switch result {
             case let .success(response):
-                self?.filterByName(name: name, list: response.result)
+                self?.filterByName(input: name, list: response.result)
             case let .failure(error):
                 self?.presenter?.presentError()
             }
         }
     }
     
-    private func filterByName(name: String, list: [PokemonList.Pokemon]?) {
-        let foundItem = list?.filter { $0.name.contains(name) }
-        presenter?.presentList(list: foundItem)
+    private func filterByName(input: String, list: [PokemonList.Pokemon]?) {
+        let foundItem = list?.filter { $0.name.contains(input.lowercased()) }
+        presenter?.presentResult(result: foundItem)
+    }
+    
+    func selectPokemon(_ item: PokemonList.Presentable) {
+        self.selectedPokemon = item
     }
 }

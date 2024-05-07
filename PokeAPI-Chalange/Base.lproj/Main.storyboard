@@ -22,13 +22,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Zl-Sp-E41">
                                     <size key="itemSize" width="129" height="170"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="60"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pokemonItemCell" id="k19-WM-oWl" customClass="PokemonItemCell" customModule="PokeAPI_Chalange" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="129" height="170"/>
+                                        <rect key="frame" x="0.0" y="60" width="129" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="53V-AL-l64">
                                             <rect key="frame" x="0.0" y="0.0" width="129" height="170"/>
@@ -75,21 +75,21 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="pokemonSearchBarView" id="fQM-Tc-EU9" customClass="PokemonSearchBarReuseableView" customModule="PokeAPI_Chalange" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="pokemonSearchBarView" id="xp9-Dy-lUT" customClass="PokemonSearchBarReuseableView" customModule="PokeAPI_Chalange" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <searchBar contentMode="redraw" placeholder="Enter Pokèmon Name" id="Fa2-Es-jgN">
-                                            <rect key="frame" x="0.0" y="-299" width="375" height="647"/>
+                                        <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" placeholder="Search by name" translatesAutoresizingMaskIntoConstraints="NO" id="bNK-3I-Pak">
+                                            <rect key="frame" x="0.0" y="3" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
-                                                <outlet property="delegate" destination="BYZ-38-t0r" id="6ia-eV-u3s"/>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="XLr-fQ-sfT"/>
                                             </connections>
                                         </searchBar>
                                     </subviews>
                                     <connections>
-                                        <outlet property="searchBar" destination="Fa2-Es-jgN" id="lnm-3D-hzT"/>
+                                        <outlet property="searchBar" destination="bNK-3I-Pak" id="2uF-O9-qbP"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>

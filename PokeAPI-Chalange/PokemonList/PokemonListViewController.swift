@@ -12,19 +12,30 @@ import SDWebImage
 
 protocol PokemonListDisplayLogic: AnyObject {
     func displayList(_ list: [PokemonList.Presentable]?)
+    func displayResult(_ result: [PokemonList.Presentable]?)
     func displayError()
 }
 
 class PokemonListViewController: UIViewController {
+    
     enum DesignConstant {
         static let cellGap: CGFloat = 8.0
     }
+    
+    enum DisplayType {
+        case feeds
+        case search
+    }
+    
     @IBOutlet var collectionView: UICollectionView!
     var pokemons: [PokemonList.Presentable] = []
+    var resultPokemons: [PokemonList.Presentable]?
     let limitItem: Int = 20
     var offsetItem: Int = 0
     var searchDelay: DispatchWorkItem?
     var searchingName: String?
+    
+    var currentDisplayType: DisplayType = .feeds
     
     var interactor: PokemonListBusinessLogic?
     var router: (NSObjectProtocol & PokemonListRoutingLogic & PokemonListDataPassing)?
@@ -73,7 +84,6 @@ class PokemonListViewController: UIViewController {
         super.viewDidLoad()
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.register(PokemonSearchBarReuseableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PokemonSearchBarReuseableView.reuseableId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,22 +95,32 @@ class PokemonListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        searchDelay = DispatchWorkItem { [weak self] in
-//            self?.interactor?.searchPokemonName(name: self?.searchingName ?? "")
-//        }
     }
 }
 
 extension PokemonListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.pokemons.count
+        switch currentDisplayType {
+        case .feeds:
+            return self.pokemons.count
+        case .search:
+            return self.resultPokemons?.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonItemCell.reuseableId, for: indexPath) as? PokemonItemCell else {
             return UICollectionViewCell()
         }
-        cell.pokemon = pokemons[indexPath.row]
+        
+        switch currentDisplayType {
+        case .feeds:
+            cell.pokemon = self.pokemons[indexPath.row]
+        case .search:
+            if let pokemon = self.resultPokemons?[indexPath.row] as? PokemonList.Presentable {
+                cell.pokemon = pokemon
+            }
+        }
         return cell
     }
     
@@ -110,24 +130,39 @@ extension PokemonListViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        8
+        DesignConstant.cellGap
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        8
+        DesignConstant.cellGap
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionFooter else {
-            return UICollectionReusableView()
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PokemonSearchBarReuseableView.reuseableId, for: indexPath) as? PokemonSearchBarReuseableView else {
+                return UICollectionReusableView()
+            }
+            guard header.searchBar.delegate is PokemonListViewController else {
+                return header
+            }
+            header.searchBar.delegate = self
+            return header
+        default:
+            assert(false, "no collect type view")
+            
         }
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: PokemonSearchBarReuseableView.reuseableId, for: indexPath)
-        return header
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let pokemon = pokemons[indexPath.row] as PokemonList.Presentable else {
-            return
+        switch currentDisplayType {
+        case .feeds:
+            let pokemon = self.pokemons[indexPath.row]
+            self.interactor?.selectPokemon(pokemon)
+        case .search:
+            if let pokemon = self.resultPokemons?[indexPath.row] as? PokemonList.Presentable {
+                self.interactor?.selectPokemon(pokemon)
+            }
         }
     }
 }
@@ -138,32 +173,42 @@ extension PokemonListViewController: UIScrollViewDelegate {
             interactor?.getPokemonList(limit: limitItem, offset: pokemons.count)
         }
     }
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        
-    }
     
     private func checkBottomScroll(_ scrollView: UIScrollView) -> Bool {
         scrollView.contentOffset.y > scrollView.contentSize.height - (self.view.bounds.height * 1.3)
     }
 }
 
-//extension PokemonListViewController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        // Click search bar action
-//    }
-//    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        // Text did changed
-//        self.searchingName = searchText
-//        searchDelay?.cancel()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: searchDelay!)
-//    }
-//}
+extension PokemonListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Text did changed
+        guard searchText.contains(/[a-zA-Z]+/) else {
+            self.currentDisplayType = .feeds
+            self.searchingName = ""
+            return
+        }
+        self.currentDisplayType = .search
+        self.searchingName = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        searchDelay?.cancel()
+        searchDelay = DispatchWorkItem { [weak self] in
+            self?.interactor?.searchPokemonName(name: self?.searchingName ?? "")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: searchDelay!)
+    }
+}
 
 extension PokemonListViewController: PokemonListDisplayLogic {
     func displayList(_ list: [PokemonList.Presentable]?){
         if let newItem = list {
             self.pokemons.append(contentsOf: newItem)
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func displayResult(_ result: [PokemonList.Presentable]?) {
+        if let resultItems = result {
+            self.resultPokemons = resultItems
             self.collectionView.reloadData()
         }
     }

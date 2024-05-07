@@ -57,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A404A3882BE93BF2004BDEF7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A45A6E3F2BE864CE0019C872 /* Endpoint.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		A45A6E012BE791340019C872 = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +86,7 @@
 			children = (
 				A45A6E0D2BE791340019C872 /* AppDelegate.swift */,
 				A45A6E3E2BE861F00019C872 /* PokemonList */,
-				A45A6E3F2BE864CE0019C872 /* Endpoint.swift */,
+				A404A3882BE93BF2004BDEF7 /* Utils */,
 				A45A6E152BE791340019C872 /* Main.storyboard */,
 				A45A6E182BE791360019C872 /* Assets.xcassets */,
 				A45A6E1A2BE791360019C872 /* LaunchScreen.storyboard */,
