@@ -13,7 +13,6 @@
 		A45A6E1C2BE791360019C872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45A6E1A2BE791360019C872 /* LaunchScreen.storyboard */; };
 		A45A6E252BE791E40019C872 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E242BE791E40019C872 /* Alamofire */; };
 		A45A6E272BE791E40019C872 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E262BE791E40019C872 /* AlamofireDynamic */; };
-		A45A6E2A2BE792080019C872 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E292BE792080019C872 /* SkeletonUI */; };
 		A45A6E2D2BE792200019C872 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E2C2BE792200019C872 /* SDWebImage */; };
 		A45A6E2F2BE792200019C872 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A45A6E2E2BE792200019C872 /* SDWebImageMapKit */; };
 		A45A6E382BE861E70019C872 /* PokemonListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45A6E322BE861E70019C872 /* PokemonListPresenter.swift */; };
@@ -29,6 +28,7 @@
 		A46427C22BEA359A0084B17B /* PokemonDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46427BC2BEA35990084B17B /* PokemonDetailModels.swift */; };
 		A46427C32BEA359A0084B17B /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46427BD2BEA35990084B17B /* PokemonDetailViewController.swift */; };
 		A46427C42BEA359A0084B17B /* PokemonDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46427BE2BEA35990084B17B /* PokemonDetailInteractor.swift */; };
+		A46427C82BEAAD1C0084B17B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46427C72BEAAD1C0084B17B /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +51,7 @@
 		A46427BC2BEA35990084B17B /* PokemonDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailModels.swift; sourceTree = "<group>"; };
 		A46427BD2BEA35990084B17B /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 		A46427BE2BEA35990084B17B /* PokemonDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailInteractor.swift; sourceTree = "<group>"; };
+		A46427C72BEAAD1C0084B17B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +61,6 @@
 			files = (
 				A45A6E252BE791E40019C872 /* Alamofire in Frameworks */,
 				A45A6E2F2BE792200019C872 /* SDWebImageMapKit in Frameworks */,
-				A45A6E2A2BE792080019C872 /* SkeletonUI in Frameworks */,
 				A45A6E2D2BE792200019C872 /* SDWebImage in Frameworks */,
 				A45A6E272BE791E40019C872 /* AlamofireDynamic in Frameworks */,
 			);
@@ -73,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				A45A6E3F2BE864CE0019C872 /* Endpoint.swift */,
+				A46427C72BEAAD1C0084B17B /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,7 +154,6 @@
 			packageProductDependencies = (
 				A45A6E242BE791E40019C872 /* Alamofire */,
 				A45A6E262BE791E40019C872 /* AlamofireDynamic */,
-				A45A6E292BE792080019C872 /* SkeletonUI */,
 				A45A6E2C2BE792200019C872 /* SDWebImage */,
 				A45A6E2E2BE792200019C872 /* SDWebImageMapKit */,
 			);
@@ -187,7 +187,6 @@
 			mainGroup = A45A6E012BE791340019C872;
 			packageReferences = (
 				A45A6E232BE791E40019C872 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				A45A6E282BE792080019C872 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 				A45A6E2B2BE792200019C872 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = A45A6E0B2BE791340019C872 /* Products */;
@@ -219,6 +218,7 @@
 			files = (
 				A46427C32BEA359A0084B17B /* PokemonDetailViewController.swift in Sources */,
 				A46427C22BEA359A0084B17B /* PokemonDetailModels.swift in Sources */,
+				A46427C82BEAAD1C0084B17B /* Extensions.swift in Sources */,
 				A45A6E3D2BE861E70019C872 /* PokemonListInteractor.swift in Sources */,
 				A45A6E402BE864CE0019C872 /* Endpoint.swift in Sources */,
 				A46427C02BEA359A0084B17B /* PokemonDetailWorker.swift in Sources */,
@@ -465,14 +465,6 @@
 				minimumVersion = 5.9.1;
 			};
 		};
-		A45A6E282BE792080019C872 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.1;
-			};
-		};
 		A45A6E2B2BE792200019C872 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -493,11 +485,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A45A6E232BE791E40019C872 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
-		};
-		A45A6E292BE792080019C872 /* SkeletonUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A45A6E282BE792080019C872 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
-			productName = SkeletonUI;
 		};
 		A45A6E2C2BE792200019C872 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

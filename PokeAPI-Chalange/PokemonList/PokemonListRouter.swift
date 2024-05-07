@@ -25,8 +25,15 @@ class PokemonListRouter: NSObject, PokemonListRoutingLogic, PokemonListDataPassi
         if let name = dataStore?.selectedPokemon?.name,
            let vc = storyboard.instantiateViewController(withIdentifier: PokemonDetailViewController.identifier) as? PokemonDetailViewController {
             let interactor = PokemonDetailInteractor()
+            let presenter = PokemonDetailPresenter()
+            let router = PokemonDetailRouter()
             interactor.pokemonName = name
             vc.interactor = interactor
+            vc.router = router
+            interactor.presenter = presenter
+            presenter.viewController = vc
+            router.viewController = vc
+            router.dataStore = interactor
             self.viewController?.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -17,10 +17,12 @@ class PokemonDetailPresenter: PokemonDetailPresentationLogic {
     weak var viewController: PokemonDetailDisplayLogic?
     
     func presentPokemonDetail(response: PokemonDetail.Response) {
-        //
+        let presentable = PokemonDetail.Presentable(response)
+        viewController?.displayDetail(presentable: presentable)
     }
     
     func presentError(error: String) {
         //
+        viewController?.displayError(error: "Cannot load content now")
     }
 }

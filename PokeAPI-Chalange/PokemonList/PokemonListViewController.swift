@@ -169,7 +169,13 @@ extension PokemonListViewController: UICollectionViewDataSource, UICollectionVie
 }
 
 extension PokemonListViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard self.currentDisplayType == .feeds else {
+            return
+        }
         if checkBottomScroll(scrollView) {
             interactor?.getPokemonList(limit: limitItem, offset: pokemons.count)
         }
@@ -186,7 +192,8 @@ extension PokemonListViewController: UISearchBarDelegate {
         // Text did changed
         guard searchText.contains(/[a-zA-Z]+/) else {
             self.currentDisplayType = .feeds
-            self.searchingName = ""
+//            self.searchingName = ""
+            self.collectionView.reloadData()
             return
         }
         self.currentDisplayType = .search
@@ -195,7 +202,12 @@ extension PokemonListViewController: UISearchBarDelegate {
         searchDelay = DispatchWorkItem { [weak self] in
             self?.interactor?.searchPokemonName(name: self?.searchingName ?? "")
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: searchDelay!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: searchDelay!)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.currentDisplayType = .feeds
+        self.collectionView.reloadData()
     }
 }
 
